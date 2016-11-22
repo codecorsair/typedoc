@@ -21,7 +21,7 @@ export class TypeParameterConverter extends ConverterTypeComponent implements IT
      * Test whether this converter can handle the given TypeScript node.
      */
     supportsNode(context:Context, node:ts.TypeReferenceNode, type:ts.Type):boolean {
-        return !!(type.flags & ts.TypeFlags.TypeParameter);
+        return !!(typeof type !== 'undefined' && type.flags & ts.TypeFlags.TypeParameter);
     }
 
 
